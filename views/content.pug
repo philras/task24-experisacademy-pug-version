@@ -1,0 +1,171 @@
+// content.pug
+div(class="content")
+
+    <!-- Summary -->
+    section(class="container")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-file-alt")  
+                            |  Summary
+                        p(class="card-text") #{data.summary}
+
+    <!-- Languages -->
+    section(id="lang" class="container")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-globe-europe")
+                            |  Languages
+                        p(class="card-text")
+                            ul(class="list-group")
+                                each val in data.languages
+                                    li(class="list-group-item d-flex justify-content-between align-items-cente") #{val.language} 
+                                        span(class="badge badge-primary badge-pill") #{val.proficiency}
+                                        
+    <!-- Skills -->
+    section(id="skills", class="container")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fab fa-codepen")  
+                            |  Skills
+                        p(class="card-text")
+                            ul(class="list-group")
+                                each val in data.skills
+                                    li(class="list-group-item d-flex justify-content-between align-items-center") #{val.skill}
+                                        span(class="badge badge-primary badge-pill") #{val.proficiency}
+            
+    <!-- Projects -->
+    section(id="project", class="container")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-file-code")
+                            |  Projects
+                        p(class="card-text")
+                            div(class="row")
+                                each val in data.projects   
+                                    div(class="card-item col-sm-12 col-md-12")
+                                        div(class="card")
+                                            div(class="card-body")
+                                                h5(class="h4") #{val.projectName}
+                                                p #{val.role}
+                                                p(class="lead") #{val.client}
+                                                p
+                                                    span #{val.startDate} 
+                                                    |  
+                                                    |  - 
+                                                    span #{val.endDate} 
+                                                p(class="card-text") #{val.projectSummary}
+    
+    <!-- Education -->
+    section(id="education", class="container")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-graduation-cap")
+                            |  Education
+                        p(class="card-text")
+                            div(class="row")
+                                each val in data.education  
+                                    div(class="card-item col-sm-12 col-md-12")
+                                        div(class="card")
+                                            div(class="card-body")
+                                                h5(class="h4") #{val.grade}
+                                                p(class="lead") #{val.school}
+                                                p
+                                                p
+                                                    span #{val.startDate}  
+                                                    |  - 
+                                                    span #{val.endDate} 
+
+    <!-- Work Experiece -->
+    section(class="container", id="work")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-briefcase")
+                            |  Work Experience
+                        p(class="card-text")
+                            div(class="row")
+                                each val in data.workExperience   
+                                    div(class="card-item col-sm-12 col-md-12")
+                                        div(class="card")
+                                            div(class="card-body")
+                                                h5(class="h4") #{val.employer}
+                                                p(class="lead") #{val.position}
+                                                p
+                                                    span #{val.startDate} 
+                                                    |  
+                                                    |  - 
+                                                    span #{val.endDate} 
+                                                p(class="card-text") #{val.workDescription}
+
+    <!-- Certificates -->
+    section(class="container", id="certification")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-certificate")
+                            |  Certificates
+                        p(class="card-text")
+                            div(class="row")
+                                each val in data.certificates   
+                                    div(class="card-item col-sm-12 col-md-12")
+                                        div(class="card")
+                                            div(class="card-body")
+                                                h5(class="h4") #{val.organizer}
+                                                p #{val.role}
+                                                p(class="lead") #{val.position}
+                                                p
+                                                    span #{val.startDate} 
+                                                    |  
+                                                    |  - 
+                                                    span #{val.endDate} 
+                                                p(class="card-text") #{val.sertificatedescription}
+
+    <!-- Courses -->
+    section(class="container", id="course")
+        div(class="row")
+            div(class="col-md-12")
+                div(class="card card-wrap")
+                    div(class="card-body")
+                        h5(class="card-title")
+                            p(class="fas fa-chalkboard")
+                            |  Courses
+                        p(class="card-text")
+                            div(class="row")
+                                each val in data.courses   
+                                    div(class="card-item col-sm-12 col-md-12")
+                                        div(class="card")
+                                            div(class="card-body")
+                                                h5(class="h4") #{val.organizer}
+                                                p #{val.role}
+                                                p(class="lead") #{val.nameCourse}
+                                                p
+                                                    span #{val.endDate} 
+                                                p(class="card-text") #{val.courseDescription}
+                                                
+
+
+
+
+                                                
+
+                                                
+            

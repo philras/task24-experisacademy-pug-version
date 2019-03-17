@@ -1,0 +1,43 @@
+// sidebar.pug
+
+nav(id="sidebar")
+    div(id="navHeader", class="sidebar-header")
+        h2(align="center", id="sideBarName") #{data.firstName} #{data.lastName}
+        div 
+            img(align="center", id="profilPic", src=data.profilePicture)
+            p(align="center", id="title") #{data.title}
+
+    div(id="contactInfo")
+        ul  
+            li 
+                i(class="fas fa-home")
+                | #{data.location[0].address}, #{data.location[0].postalCode} #{data.location[0].city}
+            li
+                i(class="fas fa-envelope")
+                | #{data.email}
+            li
+                i(class="fas fa-phone")
+                | #{data.telephone}
+
+    div(id="linkContainer")
+        ul(class="list-unstyled components")
+            li
+                a(href="#lang", class="sidebarLinks") Languages
+            li
+                a(href="#skills", class="sidebarLinks") Skills
+            li
+                a(href="#project", class="sidebarLinks") Projects
+            li
+                a(href="#education", class="sidebarLinks") Education
+            li
+                a(href="#work", class="sidebarLinks") Work Experience
+            li
+                a(href="#certification", class="sidebarLinks") Certificates
+            li
+                a(href="#course", class="sidebarLinks") Courses
+
+    div(id="social")
+        a(href=data.socialLinks[0].url)
+            i(class="fab fa-github fa-3x") 
+        a(href=data.socialLinks[1].url)
+            i(class="fab fa-linkedin fa-3x") 
